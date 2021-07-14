@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MarioPrinciple.Interfaces;
+using MarioPrinciple.Consts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +10,7 @@ namespace MarioPrinciple.Objects
 {
     class Block:ColldeableObject
     {
-
+        public string Type = Constants.Block;
         public bool Active { get; set; }
         public Block(int x,int y)
         {
@@ -17,6 +19,12 @@ namespace MarioPrinciple.Objects
             this.Active = true;
             this.Height = 10;
             this.Width = 10;
+        }
+
+        public override void HandleCollision(ColldeableObject other)
+        {
+            // do nothing
+            Console.WriteLine(string.Concat("I'm doing shit bruh ",other.GetType().ToString()));
         }
     }
 }

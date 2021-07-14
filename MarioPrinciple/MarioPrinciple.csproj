@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consts\Consts.cs" />
     <Compile Include="Interfaces\ICollideable.cs" />
     <Compile Include="Objects\ColldeableObject.cs" />
     <Compile Include="Objects\Avatar.cs" />

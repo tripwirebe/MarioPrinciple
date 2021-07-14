@@ -13,9 +13,18 @@ namespace MarioPrinciple
         {
             Block b = new Block(11, 11);
             Avatar a = new Avatar(0, 0, 0);
-            PrintCheckCollide(b, a);
+            //PrintCheckCollide(b, a);
+            if (a.Colide(b)) {
+                a.HandleCollision(b);
+                b.HandleCollision(a);
+            }
             a.State = AvatarState.big;
-            PrintCheckCollide(b, a);
+            if (a.Colide(b))
+            {
+                a.HandleCollision(b);
+                b.HandleCollision(a);
+            }
+            //PrintCheckCollide(b, a);
             Console.ReadLine();
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MarioPrinciple.Consts;
+using MarioPrinciple.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ namespace MarioPrinciple.Objects
     }
     class Avatar:ColldeableObject
     {
+        public string Type = Constants.Avatar;
         public int ID { get; }
         public override int Height
         {
@@ -54,6 +57,16 @@ namespace MarioPrinciple.Objects
             this.X = x;
             this.Y = y;
             this.State = AvatarState.small;
+        }
+
+        public override void HandleCollision(ColldeableObject other)
+        {
+            switch (other.Type)
+            {
+                case Constants.Block: Console.WriteLine("Hey Block!");break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace MarioPrinciple.Objects
 {
-    class ColldeableObject : ICollideable
+    abstract class ColldeableObject : ICollideable
     {
+        public string Type;
         public int X { get; set ; }
         public int Y { get ; set ; }
 
@@ -22,5 +23,6 @@ namespace MarioPrinciple.Objects
             Rectangle sRectangle = new Rectangle() { X = other.X, Y = other.Y, Height = other.Height, Width = other.Width };
             return fRectangle.IntersectsWith(sRectangle);
         }
+        public abstract void HandleCollision(ColldeableObject other);
     }
 }
